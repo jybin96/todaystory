@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/api/posts",
+        url: "/api/posts",
         success:function (response) {
             console.log(response);
             postappend(response);
@@ -81,7 +81,7 @@ function posting(){
     }
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/api/posts",
+        url: "/api/posts",
         data:JSON.stringify(postDto),
         contentType:"application/json",
         success:function (response) {
