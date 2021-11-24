@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/sign.css">
+    <meta charset="UTF-8">
+    <title>회원가입 페이지</title>
+    <th:block th:if="${islogin == true}">
+        <script>
+            alert("이미 로그인이 되어있습니다.");
+            window.location.href = "http://localhost:8080/";
+        </script>
+    </th:block>
+    <script src="/sign.js"></script>
+</head>
+<body>
+<div id="login-form">
+    <div id="login-title">회원가입</div>
+
+    <div>
+        <div class="login-id-label">아이디</div>
+        <input type="text" id="user_id" name="username" placeholder="최소 3자 이상, 영어 대소문자,숫자 구성" class="login-input-box">
+        <div class="pw_verify" id="id_verify"></div>
+        <div class="login-id-label">비밀번호</div>
+        <input type="password" id="user_pw" name="password" placeholder="최소 4자 이상, 아이디랑 같으면 안됩니다." class="login-input-box">
+
+        <div class="login-id-label">비밀번호 확인</div>
+        <input type="password" id="user_pw2" name="password" class="login-input-box">
+        <div class="pw_verify" id="verify"></div>
+        <div class="login-id-label">E-mail</div>
+        <input type="text" id="user_email" name="email" placeholder="E-mail" class="login-input-box">
+
+
+        <button id="login-id-submit" onclick="signupSubmit()">회원 가입</button>
+    </div>
+</div>
+</body>
+</html>

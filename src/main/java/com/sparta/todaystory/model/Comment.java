@@ -1,23 +1,22 @@
 package com.sparta.todaystory.model;
 
-import com.sparta.todaystory.dto.PostDto;
+import com.sparta.todaystory.dto.CommentDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Getter
+@Setter
 @Entity
 @NoArgsConstructor
-public class Post extends Timestamped{
+public class Comment extends Timestamped{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
 
     // 반드시 값을 가지도록 합니다.
-    @Column(nullable = false)
-    private String title;
-
     @Column(columnDefinition = "LONGTEXT",nullable = false)
     private String content;
 
@@ -27,11 +26,13 @@ public class Post extends Timestamped{
     @Column(nullable = false)
     private Long userId;
 
-    public Post(PostDto postDto, long userId,String name){
-        this.title = postDto.getTitle();
-        this.name = name;
-        this.content = postDto.getContent();
-        this.userId = userId;
-    }
+    @Column(nullable = false)
+    private Long postId;
 
+    public Comment(CommentDto commentDto, Long userId, String name){
+        this.name = name;
+        this.content = commentDto.getContent();
+        this.userId = userId;
+        this.postId = commentDto.getPostId();
+    }
 }

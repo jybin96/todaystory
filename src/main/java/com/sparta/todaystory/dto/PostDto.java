@@ -1,4 +1,4 @@
-package com.sparta.todaystory.model;
+package com.sparta.todaystory.dto;
 
 import lombok.Getter;
 
@@ -6,5 +6,4 @@ import lombok.Getter;
 public class PostDto {
     private String title;
     private String content;
-    private String name;
 }

@@ -26,7 +26,7 @@ function datetime(createdAt){
 }
 function postHtml(postDto){
     let temphtml = `<div class="post_wrap" >
-            <div class="content" onclick='postopen(${JSON.stringify(postDto)})'>
+            <div class="content" onclick='postopen(${postDto.id})'>
                 <div class="content_title">
                     <p>${postDto.title}</p>
                 </div>
@@ -42,17 +42,18 @@ function postHtml(postDto){
         </div>`
     return temphtml
 }
-function postopen(postDto){
-    var myModal = new bootstrap.Modal(document.getElementById('postmodal'), {
-        keyboard: false
-    })
-    myModal.show();
-    console.log(postDto);
-    $("#modal_title").text(postDto.title);
-    $("#modal_content").text(postDto.content);
-    $("#modal_content").append(`<div class="modal_content_footer" id="content_footer">
-                                written by ${postDto.name} ${datetime(postDto.createdAt)}
-                                </div>`)
+function postopen(id){
+    window.location.href="http://localhost:8080/posts/"+`${id}`
+    // var myModal = new bootstrap.Modal(document.getElementById('postmodal'), {
+    //     keyboard: false
+    // })
+    // myModal.show();
+    // console.log(postDto);
+    // $("#modal_title").text(postDto.title);
+    // $("#modal_content").text(postDto.content);
+    // $("#modal_content").append(`<div class="modal_content_footer" id="content_footer">
+    //                             written by ${postDto.name} ${datetime(postDto.createdAt)}
+    //                             </div>`)
 
 }
 function postingopen(){
@@ -63,19 +64,14 @@ function postingopen(){
 }
 
 function posting(){
-    let name = $("#name").val();
     let title = $("#title").val();
     let content = $("#content").val();
-    if(name.trim() == "" || title.trim() =="" || content.trim() == ""){
+    if(title.trim() =="" || content.trim() == ""){
         alert("안적으신 부분이 있습니다! 확인해주세요");
         return;
     }
 
-    console.log(title)
-    console.log(content)
-    console.log(name);
     let postDto = {
-        name : name,
         title : title,
         content : content
     }
@@ -90,3 +86,4 @@ function posting(){
         }
     })
 }
+

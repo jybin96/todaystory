@@ -1,5 +1,6 @@
-package com.sparta.todaystory.model;
+package com.sparta.todaystory.repository;
 
+import com.sparta.todaystory.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
