@@ -1,5 +1,6 @@
 package com.sparta.todaystory.model;
 
+import com.sparta.todaystory.dto.SignupRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,7 +26,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String email;
 
     @Column(unique = true)
@@ -44,6 +45,13 @@ public class User {
         this.password = password;
         this.email = email;
         this.kakaoId = kakaoId;
+    }
+
+    public User(SignupRequestDto signupRequestDto){
+        this.username = signupRequestDto.getUsername();
+        this.password = signupRequestDto.getPassword();
+        this.email = signupRequestDto.getEmail();
+        this.kakaoId = null;
     }
 
 }

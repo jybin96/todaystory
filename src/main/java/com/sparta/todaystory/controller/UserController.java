@@ -10,7 +10,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
@@ -41,7 +47,7 @@ public class UserController {
     // 회원 가입 요청 처리
     @PostMapping("/user/signup")
     @ResponseBody
-    public boolean registerUser(@RequestBody SignupRequestDto requestDto) {
+    public String registerUser(@RequestBody SignupRequestDto requestDto) {
         return userService.registerUser(requestDto);
     }
 

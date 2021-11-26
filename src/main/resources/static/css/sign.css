@@ -359,7 +359,7 @@ button {
     height: 32px;
     /*margin: 56px auto auto auto;*/
     flex-grow: 0;
-    font-family: SpoqaHanSansNeo;
+    font-family: 'Black Han Sans', sans-serif;
     font-size: 32px;
     font-weight: bold;
     font-stretch: normal;

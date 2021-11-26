@@ -87,3 +87,9 @@ function posting(){
     })
 }
 
+function goLoginPage(){
+    window.location.href="http://localhost:8080/user/login"
+}
+function logout(){
+    window.location.href="http://localhost:8080/user/logout"
+}

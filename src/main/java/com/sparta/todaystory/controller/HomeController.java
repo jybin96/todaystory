@@ -44,8 +44,10 @@ public class HomeController {
         Post post = postservice.serviceSearchPost(id);
         if(userDetails != null){
             model.addAttribute("userId",userDetails.getUser().getId());
+            model.addAttribute("islogin", true);
         }else{
             model.addAttribute("userId",null);
+            model.addAttribute("islogin",false);
         }
         model.addAttribute("post",post);
         model.addAttribute("commentList",commentList);

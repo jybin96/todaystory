@@ -59,8 +59,13 @@
     </div>
 </div>
 <div class="title_wrap">
+
     <div class="title_main" id="asd">
-        오늘 나의 이야기
+        <a href="/" style="text-decoration: none; color: black">오늘 나의 이야기</a>
+    </div>
+    <div style=" display: flex; justify-content: flex-end; align-items: center">
+        <button th:if="${islogin == false}" onclick="goLoginPage()" style="margin-right: 200px">로그인</button>
+        <button th:if="${islogin == true}" onclick="logout()" style="margin-right: 200px">로그아웃</button>
     </div>
 </div>
 <div class="content_wrap">

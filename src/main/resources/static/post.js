@@ -113,33 +113,11 @@ function modifyModalOpen(comment){
     $(`#modifySubmit${comment.id}`).css('display','block');
     $(`#modifyCancle${comment.id}`).css('display','block');
     $(`#comment_textarea${comment.id}`).val(`${text}`);
-//     let modalhtml = `<div class="modal" tabindex="-1" id="myModal2">
-//     <div class="modal-dialog modal-lg">
-//         <div class="modal-content">
-//             <div class="modal-header">
-//                 <h5 class="modal-title">댓글 수정</h5>
-//                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-//             </div>
-//             <div class="modal-body">
-//                 <div class="modal_posting_wrap">
-//                     <div class="input-group">
-//                         <span class="input-group-text">본문</span>
-//                         <textarea id="modal_comment_content" class="form-control" aria-label="With textarea"></textarea>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div class="modal-footer">
-//                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-//                 <button type="button" class="btn btn-primary" onclick="modifyComment(${comment.id})">수정하기</button>
-//             </div>
-//         </div>
-//     </div>
-// </div>`
-//     console.log(text);
-//     $("#comment_modal_div").append(modalhtml);
-//     var myModal = new bootstrap.Modal(document.getElementById('myModal2'), {
-//         keyboard: false
-//     })
-//     myModal.show();
-//     $("#modal_comment_content").val(text);
+}
+
+function goLoginPage(){
+    window.location.href="http://localhost:8080/user/login"
+}
+function logout(){
+    window.location.href="http://localhost:8080/user/logout"
 }
