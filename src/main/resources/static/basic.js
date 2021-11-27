@@ -43,7 +43,7 @@ function postHtml(postDto){
     return temphtml
 }
 function postopen(id){
-    window.location.href="http://localhost:8080/posts/"+`${id}`
+    window.location.href="/posts/"+`${id}`
     // var myModal = new bootstrap.Modal(document.getElementById('postmodal'), {
     //     keyboard: false
     // })
@@ -88,8 +88,8 @@ function posting(){
 }
 
 function goLoginPage(){
-    window.location.href="http://localhost:8080/user/login"
+    window.location.href="/user/login"
 }
 function logout(){
-    window.location.href="http://localhost:8080/user/logout"
+    window.location.href="/user/logout"
 }

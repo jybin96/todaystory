@@ -49,7 +49,7 @@ function signupSubmit() {
                 return;
             }else if(response == "success"){
                 alert("회원가입에 성공하셨습니다.")
-                window.location.href = "http://localhost:8080/user/login";
+                window.location.href = "/user/login";
             }
         }
     })

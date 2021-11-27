@@ -30,7 +30,7 @@ function saveComment(postId){
             console.log(response)
             if(response == false){
                 alert("로그인후 이용가능합니다!");
-                window.location.href ="http://localhost:8080/user/login"
+                window.location.href ="/user/login"
             }else{
                 alert("댓글 작성 성공");
                 location.reload();
@@ -50,7 +50,7 @@ function deletePost(postId){
         contentType:"application/json",
         success:function (response) {
             alert("삭제 완료");
-            window.location.href = "http://localhost:8080"
+            window.location.href = "/"
         }
     })
 }
@@ -116,8 +116,8 @@ function modifyModalOpen(comment){
 }
 
 function goLoginPage(){
-    window.location.href="http://localhost:8080/user/login"
+    window.location.href="/user/login"
 }
 function logout(){
-    window.location.href="http://localhost:8080/user/logout"
+    window.location.href="/user/logout"
 }

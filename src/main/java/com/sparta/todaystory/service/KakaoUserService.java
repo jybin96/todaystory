@@ -43,7 +43,7 @@ public class KakaoUserService {
         KakaoUserInfoDto kakaoUserInfo = getKakaoUserInfo(accessToken);
 
         //3. 필요시에 회원가입
-       User kakaoUser = registerKakaoUserIfNeeded(kakaoUserInfo);
+        User kakaoUser = registerKakaoUserIfNeeded(kakaoUserInfo);
 
         // 4. 강제 로그인 처리
         forceLoginUser(kakaoUser);
@@ -88,7 +88,7 @@ public class KakaoUserService {
         MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
         body.add("grant_type", "authorization_code");
         body.add("client_id", "beb9ea3f0558ac327507426c403bd756");
-        body.add("redirect_uri", "http://localhost:8080/user/kakao/callback");
+        body.add("redirect_uri", "http://54.180.138.58/user/kakao/callback");
         body.add("code", code);
 
 // HTTP 요청 보내기
